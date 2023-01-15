@@ -1,0 +1,39 @@
+.App {
+    text-align: center;
+}
+
+h1 {
+    font-size: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 0;
+    margin: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.Reset {
+    background-color: rgb(32, 32, 32);
+    color: #fff;
+}
+
+form {
+    font-size: 30px;
+}
+
+input {
+    margin: 15px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+}

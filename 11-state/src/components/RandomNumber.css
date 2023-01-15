@@ -1,0 +1,21 @@
+h1 {
+    display: inline-block;
+    font-size: 90px;
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 0;
+    margin: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
