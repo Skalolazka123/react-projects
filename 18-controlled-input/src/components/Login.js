@@ -1,24 +1,43 @@
+import { useState } from 'react'
 function Login() {
+    const [data, setData] = useState({ username: '', password: '' })
+
     function handleFormSubmit(event) {
         event.preventDefault()
-        const userData = {
-            username: event.target.username.value,
-            password: event.target.password.value,
-        }
-        console.log(userData)
-        alert(JSON.stringify(userData))
+        console.log(data)
+        alert(JSON.stringify(data))
     }
+
+    function handleInputChange(name, text) {
+        setData({
+            ...data,
+            [name]: text,
+        }) /* ...data = Spread */
+    }
+
     return (
         <>
             <h1>Login Form</h1>
             <form onSubmit={handleFormSubmit}>
                 <label>
                     Username:
-                    <input type="text" name="username" />
+                    <input
+                        type="text"
+                        value={data.username}
+                        onChange={(e) =>
+                            handleInputChange('username', e.target.value)
+                        }
+                    />
                 </label>
                 <label>
                     Password:
-                    <input type="password" name="password" />
+                    <input
+                        type="password"
+                        value={data.password}
+                        onChange={(e) =>
+                            handleInputChange('password', e.target.value)
+                        }
+                    />
                 </label>
                 <button type="submit">Login</button>
             </form>
