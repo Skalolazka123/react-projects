@@ -1,10 +1,12 @@
+import { useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import courses from '../data/courses'
-import NotFound from './NotFound'
+// import NotFound from './NotFound'
 function SingleCourse() {
     const params = useParams()
     const navigate = useNavigate()
     const course = courses.find((course) => course.slug === params.courseSlug)
+
     // Simply show not found component
     //  if (!course) {
     //     return (
@@ -17,15 +19,19 @@ function SingleCourse() {
     //     )
     // }
 
-    if (!course) {
-        navigate('..', { relative: 'path' })
-    }
+    //when change course => call useEffect
+    useEffect(() => {
+        if (!course) {
+            navigate('..', { relative: 'path' })
+        }
+    }, [course, navigate])
+
     return (
         <>
-            <h1>{course.title}</h1>
+            <h1>{course?.title}</h1>
             <div className="singleCourses">
-                <h2>Course slug: {course.slug}</h2>
-                <h3>Course id: {course.id}</h3>
+                <h2>Course slug: {course?.slug}</h2>
+                <h3>Course id: {course?.id}</h3>
                 <Link to=".." relative="path" className="allCourses">
                     Go To All Cources
                 </Link>
